@@ -1,0 +1,50 @@
+//
+//  PrefixHeader.pch
+//  0307-新浪微博
+//
+//  Created by whj on 16/3/8.
+//  Copyright © 2016年 wanghongjiang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "HMXinlang-PrefixHeader.pch"
+#import "UIView+Extension.h"
+#import "HMTest1ViewController.h"
+#import "HMTest2ViewController.h"
+#import "HMNaviVC.h"
+#import "HMItemTools.h"
+#import "UIBarButtonItem+Extension.h"
+#import "HMSearchBar.h"
+#import "HMDropMenu.h"
+#import "UIWindow+Extension.h"
+#import "NSDate+Extension.h"
+#import "NSString+Extension.h"
+#import "NSString+Emoji.h"
+#import "UITextView+Extension.h"
+#import "HMConst.h"
+
+#define HMRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]  //随即色
+
+#define HMColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+
+//通知中心
+#define HMNotificationCenter [NSNotificationCenter defaultCenter]
+
+
+#ifdef DEBUG //处于开发阶段
+#define HMLog(...) NSLog(__VA_ARGS__)   //定义一个自定义的输出方法
+#define DLog(fmt, ...) NSLog((@"%s->[Line %d]\n->" fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)//可以输出这条语句所在的行
+#else//处于发布阶段
+#define HMLog(...)
+#define DLog(fmt,...)
+#endif 
+
+
+#endif /* PrefixHeader_pch */
