@@ -441,9 +441,16 @@
  */
 - (void)textDidChange
 {
-   
+    //当里面只有表情图片的时候按钮也应该被选中
+    if (self.textView.fullText) {
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    }
+    else {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
+
     self.navigationItem.rightBarButtonItem.enabled = self.textView.hasText;
- 
+    
 }
 
 - (void)cancel

@@ -34,7 +34,6 @@
         //block:想在外面写一行代码放到里面去执行，不会污染代码保证代码的纯洁性
         [self insertAttributeString:imgString settingBlock:^(NSMutableAttributedString *attributeText) {
 
-            
             [attributeText addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, attributeText.length)];
 
         }];
