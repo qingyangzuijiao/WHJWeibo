@@ -50,6 +50,7 @@
 		D24F4EBB1C9EAE6800F36A9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F4EB91C9EAE6800F36A9E /* main.m */; };
 		D24F4EBE1C9EB55200F36A9E /* HMItemTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F4EBD1C9EB55200F36A9E /* HMItemTools.m */; };
 		D24F4EC11C9EE7EA00F36A9E /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F4EC01C9EE7EA00F36A9E /* UIBarButtonItem+Extension.m */; };
+		D25910F31D731B02001E6E21 /* HMHttpRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D25910F21D731B02001E6E21 /* HMHttpRequestTool.m */; };
 		D25DA8BE1CC908ED00A481C9 /* HMAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D25DA8BD1CC908ED00A481C9 /* HMAccountTool.m */; };
 		D25DA8C41CC927E500A481C9 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D25DA8C31CC927E500A481C9 /* UIWindow+Extension.m */; };
 		D26DB7021CCA88C10063F624 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D26DB7011CCA88C10063F624 /* Foundation+Log.m */; };
@@ -403,6 +404,8 @@
 		D24F4EBD1C9EB55200F36A9E /* HMItemTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMItemTools.m; sourceTree = "<group>"; };
 		D24F4EBF1C9EE7EA00F36A9E /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		D24F4EC01C9EE7EA00F36A9E /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		D25910F11D731B02001E6E21 /* HMHttpRequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHttpRequestTool.h; sourceTree = "<group>"; };
+		D25910F21D731B02001E6E21 /* HMHttpRequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHttpRequestTool.m; sourceTree = "<group>"; };
 		D25DA8BC1CC908ED00A481C9 /* HMAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAccountTool.h; sourceTree = "<group>"; };
 		D25DA8BD1CC908ED00A481C9 /* HMAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAccountTool.m; sourceTree = "<group>"; };
 		D25DA8C21CC927E500A481C9 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
@@ -928,6 +931,7 @@
 		D24F4E841C9EADE300F36A9E /* Main（主要） */ = {
 			isa = PBXGroup;
 			children = (
+				D25910F01D731AEC001E6E21 /* Tool */,
 				D24F4EB61C9EAE6800F36A9E /* others */,
 				D24F4E871C9EADE300F36A9E /* Category */,
 				D24F4E8A1C9EADE300F36A9E /* Controller */,
@@ -1119,6 +1123,15 @@
 				D2076F4D1D72CEFF007A1DCE /* HMConst.m */,
 			);
 			path = others;
+			sourceTree = "<group>";
+		};
+		D25910F01D731AEC001E6E21 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				D25910F11D731B02001E6E21 /* HMHttpRequestTool.h */,
+				D25910F21D731B02001E6E21 /* HMHttpRequestTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		D25DA8BB1CC908D700A481C9 /* Tool */ = {
@@ -1891,6 +1904,7 @@
 				D24BD20C1CA113D600824AA9 /* HMSearchBar.m in Sources */,
 				D20ECEF41CFDD2DE00B8697E /* HMComposeToolBar.m in Sources */,
 				D24773651CCD0B5B00EB429B /* HMUser.m in Sources */,
+				D25910F31D731B02001E6E21 /* HMHttpRequestTool.m in Sources */,
 				D247734F1CCC734600EB429B /* HMTitleMenuVC.m in Sources */,
 				D20ECEF01CFDD2A900B8697E /* HMComposeVC.m in Sources */,
 				D25DA8C41CC927E500A481C9 /* UIWindow+Extension.m in Sources */,
@@ -1999,7 +2013,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2036,7 +2050,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2052,7 +2066,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/0307-新浪微博/HMXinlang-PrefixHeader.pch";
 				INFOPLIST_FILE = "0307-新浪微博/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xnkl.-307-----";
@@ -2070,7 +2084,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/0307-新浪微博/HMXinlang-PrefixHeader.pch";
 				INFOPLIST_FILE = "0307-新浪微博/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xnkl.-307-----";

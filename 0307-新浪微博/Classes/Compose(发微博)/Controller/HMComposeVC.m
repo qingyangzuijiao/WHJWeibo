@@ -9,7 +9,7 @@
 #import "HMComposeVC.h"
 #import "HMAccountTool.h"
 #import "HMEmotionTextView.h"
-#import <AFNetworking.h>
+#import "HMHttpRequestTool.h"
 #import <MBProgressHUD+MJ.h>
 #import "HMComposeToolBar.h"
 #import "HMComposePhotosView.h"
@@ -320,39 +320,62 @@
  */
 - (void)sendImageStatus
 {
-    //创建一个manager
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    //    manager.responseSerializer = [AFJSONResponseSerializer serializer];//默认的就是json解析器
-    // AFN的AFJSONResponseSerializer默认不接受text/plain这种类型
-    
-    
-    // 2.拼接请求参数
+    // 1.拼接请求参数
     NSMutableDictionary *parametersDict = [NSMutableDictionary dictionary];
     parametersDict[@"access_token"] = [HMAccountTool account].access_token;
     parametersDict[@"status"] = self.textView.fullText;
+
     
-    
-    //3.发送请求
-    [manager POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:parametersDict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        //拼接文件数据
+    [HMHttpRequestTool post:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:parametersDict requestSerializerValue:@"application/json" httpHeaderField:@"Content-Type" constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        拼接文件数据
         UIImage *image = [self.photosView.photos firstObject];
         NSData *data = UIImageJPEGRepresentation(image, 1.0);//1.0代表1:1上传，不会失真
-        
+
         [formData appendPartWithFileData:data name:@"pic" fileName:@"test.jpg" mimeType:@"image/jpeg"];
-    } progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        HMLog(@"success---->%@",responseObject);
+
+    } success:^(id json) {
+        HMLog(@"success---->%@",json);
         [MBProgressHUD showSuccess:@"发送成功"];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+
+    } failure:^(NSError *error) {
         [MBProgressHUD showError:@"发送失败"];
         HMLog(@"failure----->%@",error);
+       
     }];
+    
+//    //创建一个manager
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    //    manager.responseSerializer = [AFJSONResponseSerializer serializer];//默认的就是json解析器
+//    // AFN的AFJSONResponseSerializer默认不接受text/plain这种类型
+//    
+//    
+//    // 2.拼接请求参数
+//    NSMutableDictionary *parametersDict = [NSMutableDictionary dictionary];
+//    parametersDict[@"access_token"] = [HMAccountTool account].access_token;
+//    parametersDict[@"status"] = self.textView.fullText;
+//    
+//    
+//    //3.发送请求
+//    [manager POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:parametersDict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+//        //拼接文件数据
+//        UIImage *image = [self.photosView.photos firstObject];
+//        NSData *data = UIImageJPEGRepresentation(image, 1.0);//1.0代表1:1上传，不会失真
+//        
+//        [formData appendPartWithFileData:data name:@"pic" fileName:@"test.jpg" mimeType:@"image/jpeg"];
+//    } progress:^(NSProgress * _Nonnull uploadProgress) {
+//        
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        HMLog(@"success---->%@",responseObject);
+//        [MBProgressHUD showSuccess:@"发送成功"];
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//        [MBProgressHUD showError:@"发送失败"];
+//        HMLog(@"failure----->%@",error);
+//    }];
 
 
 }
@@ -365,33 +388,48 @@
  */
 - (void)sendWithoutImageStatus
 {
-    //创建一个manager
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    //    manager.responseSerializer = [AFJSONResponseSerializer serializer];//默认的就是json解析器
-    // AFN的AFJSONResponseSerializer默认不接受text/plain这种类型
-    
-    // 2.拼接请求参数
+    // 1.拼接请求参数
     NSMutableDictionary *parametersDict = [NSMutableDictionary dictionary];
     parametersDict[@"access_token"] = [HMAccountTool account].access_token;
     parametersDict[@"status"] = self.textView.fullText;
-    DLog(@"------%@",self.textView.fullText);
-    
-    //3.发送请求
-    [manager POST:@"https://api.weibo.com/2/statuses/update.json" parameters:parametersDict progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-       
+//    DLog(@"------%@",self.textView.fullText);
+
+    //2.发送请求
+    [HMHttpRequestTool post:@"https://api.weibo.com/2/statuses/update.json" parameters:parametersDict success:^(id json) {
         [MBProgressHUD showSuccess:@"发送成功"];
-         HMLog(@"success---->%@",responseObject);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+         HMLog(@"success---->%@",json);
+    } failure:^(NSError *error) {
         [MBProgressHUD showError:@"发送失败"];
         HMLog(@"failure----->%@",error);
     }];
+    
+//    //创建一个manager
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+////    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    //    manager.responseSerializer = [AFJSONResponseSerializer serializer];//默认的就是json解析器
+//    // AFN的AFJSONResponseSerializer默认不接受text/plain这种类型
+//    
+//    // 2.拼接请求参数
+//    NSMutableDictionary *parametersDict = [NSMutableDictionary dictionary];
+//    parametersDict[@"access_token"] = [HMAccountTool account].access_token;
+//    parametersDict[@"status"] = self.textView.fullText;
+//    DLog(@"------%@",self.textView.fullText);
+//    
+//    //3.发送请求
+//    [manager POST:@"https://api.weibo.com/2/statuses/update.json" parameters:parametersDict progress:^(NSProgress * _Nonnull uploadProgress) {
+//        
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//       
+//        [MBProgressHUD showSuccess:@"发送成功"];
+//         HMLog(@"success---->%@",responseObject);
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//        [MBProgressHUD showError:@"发送失败"];
+//        HMLog(@"failure----->%@",error);
+//    }];
 
     
 
