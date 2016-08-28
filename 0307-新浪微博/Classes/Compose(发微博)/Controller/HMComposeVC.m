@@ -122,6 +122,7 @@
 - (void)emotionDidDelete
 {
     [self.textView deleteBackward];
+    [self textDidChange];
 }
 
 /**
@@ -195,6 +196,7 @@
     //封装像textView中插入文字或图片
     [self.textView insertEmotion: emotion];
     
+    [self textDidChange];
    /**
    HMEmotion *selectedEmotion = notification.userInfo[HMEmotionBtnKey];
     HMLog(@"--%@",selectedEmotion);
@@ -397,10 +399,10 @@
     //2.发送请求
     [HMHttpRequestTool post:@"https://api.weibo.com/2/statuses/update.json" parameters:parametersDict success:^(id json) {
         [MBProgressHUD showSuccess:@"发送成功"];
-         HMLog(@"success---->%@",json);
+//         DLog(@"success---->%@",json);
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"发送失败"];
-        HMLog(@"failure----->%@",error);
+        DLog(@"failure----->%@",error);
     }];
     
 //    //创建一个manager
@@ -441,15 +443,11 @@
  */
 - (void)textDidChange
 {
+//    DLog(@"%@--",self.textView.fullText);
     //当里面只有表情图片的时候按钮也应该被选中
-    if (self.textView.fullText) {
-        self.navigationItem.rightBarButtonItem.enabled = YES;
-    }
-    else {
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-    }
+    self.navigationItem.rightBarButtonItem.enabled = self.textView.fullText;
 
-    self.navigationItem.rightBarButtonItem.enabled = self.textView.hasText;
+   //    self.navigationItem.rightBarButtonItem.enabled = self.textView.hasText;
     
 }
 
