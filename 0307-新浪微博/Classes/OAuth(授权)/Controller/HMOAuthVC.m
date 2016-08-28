@@ -10,7 +10,7 @@
 //  App Secret：53bf05b6b5a90b583895371e6c7bb1a0
 
 #import "HMOAuthVC.h"
-#import <AFNetworking.h>
+#import "HMHttpRequestTool.h"
 #import "MBProgressHUD+MJ.h"
 #import "HMAccountTool.h"
 
@@ -108,13 +108,7 @@
 
 - (void)accessTokenWithCode:(NSString *)code
 {
-    //创建一个manager
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-//    manager.responseSerializer = [AFJSONResponseSerializer serializer];//默认的就是json解析器
-    // AFN的AFJSONResponseSerializer默认不接受text/plain这种类型
-
-    // 2.拼接请求参数
+    // 1.拼接请求参数
     NSMutableDictionary *parametersDict = [NSMutableDictionary dictionary];
     parametersDict[@"client_id"] = HMAppKey;
     parametersDict[@"client_secret"] = HMAppSecret;
@@ -122,24 +116,56 @@
     parametersDict[@"code"] = code;
     parametersDict[@"redirect_uri"] = HMRedirectURL;
 
-    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:parametersDict progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        HMLog(@"success---->%@",responseObject);
+    //2.发送请求
+    [HMHttpRequestTool post:@"https://api.weibo.com/oauth2/access_token" parameters:parametersDict success:^(id json) {
+        DLog(@"success---->%@",json);
         [MBProgressHUD hideHUD];
         //存储账号信息
-        HMAccount *account = [HMAccount accountWithDict:responseObject];
+        HMAccount *account = [HMAccount accountWithDict:json];
         [HMAccountTool saveAccount:account];
-        
+
         //设置根控制器(切换)
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         [window switchRootViewController];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+
+    } failure:^(NSError *error) {
+
         [MBProgressHUD hideHUD];
         HMLog(@"failure----->%@",error);
+
     }];
+//    //创建一个manager
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    
+////    manager.responseSerializer = [AFJSONResponseSerializer serializer];//默认的就是json解析器
+//    // AFN的AFJSONResponseSerializer默认不接受text/plain这种类型
+//
+//    // 2.拼接请求参数
+//    NSMutableDictionary *parametersDict = [NSMutableDictionary dictionary];
+//    parametersDict[@"client_id"] = HMAppKey;
+//    parametersDict[@"client_secret"] = HMAppSecret;
+//    parametersDict[@"grant_type"] = @"authorization_code";
+//    parametersDict[@"code"] = code;
+//    parametersDict[@"redirect_uri"] = HMRedirectURL;
+//
+//    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:parametersDict progress:^(NSProgress * _Nonnull uploadProgress) {
+//        
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        HMLog(@"success---->%@",responseObject);
+//        [MBProgressHUD hideHUD];
+//        //存储账号信息
+//        HMAccount *account = [HMAccount accountWithDict:responseObject];
+//        [HMAccountTool saveAccount:account];
+//        
+//        //设置根控制器(切换)
+//        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//        [window switchRootViewController];
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//        [MBProgressHUD hideHUD];
+//        HMLog(@"failure----->%@",error);
+//    }];
 }
 
 @end
