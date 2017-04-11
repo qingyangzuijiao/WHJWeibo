@@ -1547,7 +1547,7 @@
 				TargetAttributes = {
 					D2B2BE261C8DC72E00097E7C = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 456RRGGZFH;
+						DevelopmentTeam = G3G57JVQUP;
 					};
 					D2B2BE3F1C8DC72E00097E7C = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -2063,6 +2063,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = G3G57JVQUP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/0307-新浪微博/HMXinlang-PrefixHeader.pch";
 				INFOPLIST_FILE = "0307-新浪微博/Info.plist";
@@ -2081,6 +2082,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = G3G57JVQUP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/0307-新浪微博/HMXinlang-PrefixHeader.pch";
 				INFOPLIST_FILE = "0307-新浪微博/Info.plist";
