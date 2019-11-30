@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		754582479061A0A377DA17B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE4D8286BAACC8E6613125B /* libPods.a */; };
 		D2076F4E1D72CEFF007A1DCE /* HMConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D2076F4D1D72CEFF007A1DCE /* HMConst.m */; };
 		D2093C741CE37157001EC2DE /* HMStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2093C731CE37157001EC2DE /* HMStatusCell.m */; };
 		D2093C771CE371C2001EC2DE /* HMStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D2093C761CE371C2001EC2DE /* HMStatusFrame.m */; };
@@ -29,6 +28,10 @@
 		D20ECF6C1D11A76500B8697E /* HMEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = D20ECF6B1D11A76500B8697E /* HMEmotion.m */; };
 		D2180B0E1CA7C3DF00674A16 /* HMNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2180B0D1CA7C3DF00674A16 /* HMNewFeatureVC.m */; };
 		D21FF6B41D5CD40200E8DD2B /* HMEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D21FF6B31D5CD40200E8DD2B /* HMEmotionTextView.m */; };
+		D2209EDA2392063400D1D399 /* Pods_0307_新浪微博.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2209ED62392062200D1D399 /* Pods_0307_新浪微博.framework */; };
+		D2209EDB2392063400D1D399 /* Pods_0307_新浪微博.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D2209ED62392062200D1D399 /* Pods_0307_新浪微博.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D2209EDE239206D800D1D399 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2209EDD239206D800D1D399 /* Launch Screen.storyboard */; };
+		D2209EE12392089700D1D399 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2209EDF2392089700D1D399 /* SceneDelegate.m */; };
 		D242D6981CC66E8C0075A0B6 /* HMOAuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D242D6971CC66E8C0075A0B6 /* HMOAuthVC.m */; };
 		D247734C1CCC5C4900EB429B /* HMTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D247734B1CCC5C4900EB429B /* HMTitleButton.m */; };
 		D247734F1CCC734600EB429B /* HMTitleMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D247734E1CCC734600EB429B /* HMTitleMenuVC.m */; };
@@ -318,10 +321,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D2209EDC2392063400D1D399 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D2209EDB2392063400D1D399 /* Pods_0307_新浪微博.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		3788C8116CB0ABB136BA4967 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		38BA37C7DBB61F0C3446A309 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		6BE4D8286BAACC8E6613125B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45DB3881500A4A7BEA28933F /* Pods_0307_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_0307_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60DA4E0359B1759DDB0A432E /* Pods-0307-新浪微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0307-新浪微博.release.xcconfig"; path = "Target Support Files/Pods-0307-新浪微博/Pods-0307-新浪微博.release.xcconfig"; sourceTree = "<group>"; };
+		C25916616C7EDD4945E76633 /* Pods-0307-新浪微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0307-新浪微博.debug.xcconfig"; path = "Target Support Files/Pods-0307-新浪微博/Pods-0307-新浪微博.debug.xcconfig"; sourceTree = "<group>"; };
 		D2076F4C1D72CEFF007A1DCE /* HMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMConst.h; sourceTree = "<group>"; };
 		D2076F4D1D72CEFF007A1DCE /* HMConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMConst.m; sourceTree = "<group>"; };
 		D2093C721CE37157001EC2DE /* HMStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusCell.h; sourceTree = "<group>"; };
@@ -364,6 +381,10 @@
 		D2180B0D1CA7C3DF00674A16 /* HMNewFeatureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewFeatureVC.m; sourceTree = "<group>"; };
 		D21FF6B21D5CD40200E8DD2B /* HMEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionTextView.h; sourceTree = "<group>"; };
 		D21FF6B31D5CD40200E8DD2B /* HMEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionTextView.m; sourceTree = "<group>"; };
+		D2209ED62392062200D1D399 /* Pods_0307_新浪微博.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_0307_新浪微博.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2209EDD239206D800D1D399 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D2209EDF2392089700D1D399 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		D2209EE02392089700D1D399 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		D2413EBF1C8DE157008D3F94 /* HMXinlang-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HMXinlang-PrefixHeader.pch"; sourceTree = "<group>"; };
 		D242D6961CC66E8C0075A0B6 /* HMOAuthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOAuthVC.h; sourceTree = "<group>"; };
 		D242D6971CC66E8C0075A0B6 /* HMOAuthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMOAuthVC.m; sourceTree = "<group>"; };
@@ -685,8 +706,8 @@
 				D2B6F2C51CC68CC900C21320 /* Security.framework in Frameworks */,
 				D2B6F2C31CC68CC200C21320 /* MobileCoreServices.framework in Frameworks */,
 				D2B6F2C11CC68CB300C21320 /* Foundation.framework in Frameworks */,
+				D2209EDA2392063400D1D399 /* Pods_0307_新浪微博.framework in Frameworks */,
 				D2B6F2BF1CC68C9800C21320 /* CoreGraphics.framework in Frameworks */,
-				754582479061A0A377DA17B1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,26 +728,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0EF7E741F14C66D13BDD2182 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3788C8116CB0ABB136BA4967 /* Pods.debug.xcconfig */,
-				38BA37C7DBB61F0C3446A309 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		1E5DF4CD7F00424B87BF27C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2209ED62392062200D1D399 /* Pods_0307_新浪微博.framework */,
 				D2B6F2C61CC68CD800C21320 /* SystemConfiguration.framework */,
 				D2B6F2C41CC68CC900C21320 /* Security.framework */,
 				D2B6F2C21CC68CC200C21320 /* MobileCoreServices.framework */,
 				D2B6F2C01CC68CB300C21320 /* Foundation.framework */,
 				D2B6F2BE1CC68C9800C21320 /* CoreGraphics.framework */,
-				6BE4D8286BAACC8E6613125B /* libPods.a */,
+				45DB3881500A4A7BEA28933F /* Pods_0307_____.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75B781C352FE1F7CE1B28F0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C25916616C7EDD4945E76633 /* Pods-0307-新浪微博.debug.xcconfig */,
+				60DA4E0359B1759DDB0A432E /* Pods-0307-新浪微博.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		D20ECEDD1CF7415A00B8697E /* Compose(发微博) */ = {
@@ -932,7 +954,6 @@
 			isa = PBXGroup;
 			children = (
 				D25910F01D731AEC001E6E21 /* Tool */,
-				D24F4EB61C9EAE6800F36A9E /* others */,
 				D24F4E871C9EADE300F36A9E /* Category */,
 				D24F4E8A1C9EADE300F36A9E /* Controller */,
 				D24F4E8F1C9EADE300F36A9E /* Lib */,
@@ -1113,18 +1134,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D24F4EB61C9EAE6800F36A9E /* others */ = {
-			isa = PBXGroup;
-			children = (
-				D24F4EB71C9EAE6800F36A9E /* AppDelegate.h */,
-				D24F4EB81C9EAE6800F36A9E /* AppDelegate.m */,
-				D24F4EB91C9EAE6800F36A9E /* main.m */,
-				D2076F4C1D72CEFF007A1DCE /* HMConst.h */,
-				D2076F4D1D72CEFF007A1DCE /* HMConst.m */,
-			);
-			path = others;
-			sourceTree = "<group>";
-		};
 		D25910F01D731AEC001E6E21 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1168,8 +1177,8 @@
 				D2B2BE431C8DC72E00097E7C /* 0307-新浪微博Tests */,
 				D2B2BE4E1C8DC72E00097E7C /* 0307-新浪微博UITests */,
 				D2B2BE281C8DC72E00097E7C /* Products */,
-				0EF7E741F14C66D13BDD2182 /* Pods */,
 				1E5DF4CD7F00424B87BF27C1 /* Frameworks */,
+				75B781C352FE1F7CE1B28F0B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1187,6 +1196,15 @@
 			isa = PBXGroup;
 			children = (
 				D24F4E771C9EADE300F36A9E /* Classes */,
+				D24F4EB71C9EAE6800F36A9E /* AppDelegate.h */,
+				D24F4EB81C9EAE6800F36A9E /* AppDelegate.m */,
+				D2209EE02392089700D1D399 /* SceneDelegate.h */,
+				D2209EDF2392089700D1D399 /* SceneDelegate.m */,
+				D24F4EB91C9EAE6800F36A9E /* main.m */,
+				D2076F4C1D72CEFF007A1DCE /* HMConst.h */,
+				D2076F4D1D72CEFF007A1DCE /* HMConst.m */,
+				D2B2BE3B1C8DC72E00097E7C /* Info.plist */,
+				D2209EDD239206D800D1D399 /* Launch Screen.storyboard */,
 				D2B2BE2A1C8DC72E00097E7C /* Supporting Files */,
 			);
 			path = "0307-新浪微博";
@@ -1197,7 +1215,6 @@
 			children = (
 				D2DFEFE31D2C0CCB0060C5D6 /* EmotionIcons */,
 				D2B2BE361C8DC72E00097E7C /* Assets.xcassets */,
-				D2B2BE3B1C8DC72E00097E7C /* Info.plist */,
 				D2413EBF1C8DE157008D3F94 /* HMXinlang-PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
@@ -1483,12 +1500,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2B2BE541C8DC72E00097E7C /* Build configuration list for PBXNativeTarget "0307-新浪微博" */;
 			buildPhases = (
-				32CF098564E5F312E86BC99D /* Check Pods Manifest.lock */,
+				3A52164D22CEF55BBAF8D959 /* [CP] Check Pods Manifest.lock */,
 				D2B2BE231C8DC72E00097E7C /* Sources */,
 				D2B2BE241C8DC72E00097E7C /* Frameworks */,
 				D2B2BE251C8DC72E00097E7C /* Resources */,
-				13A0F55EA2E78C2788038CE2 /* Embed Pods Frameworks */,
-				20E8C28783BD607EDB68E209 /* Copy Pods Resources */,
+				3D4592737D4236D0FEDCECD4 /* [CP] Embed Pods Frameworks */,
+				D2209EDC2392063400D1D399 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1566,6 +1583,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1780,6 +1798,7 @@
 				D2DFF1531D2C0CCB0060C5D6 /* lxh_holdzhu@2x.png in Resources */,
 				D2DFF1961D2C0CCB0060C5D6 /* lxh_xuyuan.png in Resources */,
 				D2DFF0CB1D2C0CCB0060C5D6 /* d_bishi@2x.png in Resources */,
+				D2209EDE239206D800D1D399 /* Launch Screen.storyboard in Resources */,
 				D2DFF1511D2C0CCB0060C5D6 /* lxh_holdzhu.gif in Resources */,
 				D2DFF1581D2C0CCB0060C5D6 /* lxh_jiujie.png in Resources */,
 				D2DFF0D31D2C0CCB0060C5D6 /* d_feizao@2x.png in Resources */,
@@ -1834,49 +1853,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13A0F55EA2E78C2788038CE2 /* Embed Pods Frameworks */ = {
+		3A52164D22CEF55BBAF8D959 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-0307-新浪微博-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		20E8C28783BD607EDB68E209 /* Copy Pods Resources */ = {
+		3D4592737D4236D0FEDCECD4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-0307-新浪微博/Pods-0307-新浪微博-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		32CF098564E5F312E86BC99D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-0307-新浪微博/Pods-0307-新浪微博-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1941,6 +1961,7 @@
 				D20ECF661D04854800B8697E /* HMEmotionTabBarButton.m in Sources */,
 				D20ECF5D1D04174D00B8697E /* HMEmotionKeyboard.m in Sources */,
 				D24F4EB21C9EADE300F36A9E /* HMTest1ViewController.m in Sources */,
+				D2209EE12392089700D1D399 /* SceneDelegate.m in Sources */,
 				D20ECEC01CF1CBB800B8697E /* HMStatusToolBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2013,7 +2034,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2050,7 +2071,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2059,7 +2080,7 @@
 		};
 		D2B2BE551C8DC72E00097E7C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3788C8116CB0ABB136BA4967 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = C25916616C7EDD4945E76633 /* Pods-0307-新浪微博.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2067,7 +2088,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/0307-新浪微博/HMXinlang-PrefixHeader.pch";
 				INFOPLIST_FILE = "0307-新浪微博/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xnkl.-307-----";
@@ -2078,7 +2099,7 @@
 		};
 		D2B2BE561C8DC72E00097E7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38BA37C7DBB61F0C3446A309 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 60DA4E0359B1759DDB0A432E /* Pods-0307-新浪微博.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2086,7 +2107,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/0307-新浪微博/HMXinlang-PrefixHeader.pch";
 				INFOPLIST_FILE = "0307-新浪微博/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xnkl.-307-----";

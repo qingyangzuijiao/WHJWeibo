@@ -1,0 +1,6 @@
+framework module Pods_0307_____ {
+  umbrella header "Pods-0307-新浪微博-umbrella.h"
+
+  export *
+  module * { export * }
+}
